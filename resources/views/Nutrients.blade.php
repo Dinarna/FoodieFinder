@@ -37,6 +37,5 @@
             </div>
         </div>
     </section>
-    </main>
     <!-- ======= End Page ======= -->
 @endsection
