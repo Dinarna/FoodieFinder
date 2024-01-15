@@ -26,6 +26,11 @@ Route::get('/Nutrients', function () {
     return view('Nutrients');
 });
 
+// Profile Page
+Route::get('/Profile', function () {
+    return view('Profile');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
