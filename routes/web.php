@@ -15,8 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+// Landing Page
+Route::get('/LandingPage', function () {
+    return view('LandingPage');
+});
+
+// Nutrients Page
+Route::get('/Nutrients', function () {
+    return view('Nutrients');
 });
 
 Route::get('/dashboard', function () {
