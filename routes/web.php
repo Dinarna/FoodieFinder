@@ -31,6 +31,11 @@ Route::get('/Profile', function () {
     return view('Profile');
 });
 
+// Profile Page
+Route::get('/Register', function () {
+    return view('Register');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
