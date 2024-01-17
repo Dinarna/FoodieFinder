@@ -47,8 +47,13 @@ Route::get('/Recipe', function () {
 });
 
 // Template WelcomePage Page
-Route::get('/WelcomePage', function () {
+Route::get('/helo', function () {
     return view('WelcomePage');
+});
+
+// Template Ingredient Page
+Route::get('/Ingredient', function () {
+    return view('Ingredient');
 });
 
 Route::get('/dashboard', function () {

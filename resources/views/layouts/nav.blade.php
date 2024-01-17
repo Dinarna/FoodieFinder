@@ -1,6 +1,7 @@
 <!--navbar section -->
 <header class="header">
-    <div class="logo"><a href="landing.html"><img src="import/assets/img/Logo FoodieFinder.png" height="36"></a></div>
+    <div class="logo"><a href="landing.html"><img src="import/assets/img/Logo FoodieFinder.png" height="36"></a>
+    </div>
 
     <input type="checkbox" id="check">
     <label for="check" class="icons">
@@ -12,12 +13,15 @@
         <a href="#" style="--i:0">Search By Ingredients</a>
         <a href="Nutrients.html" style="--i:1">Search By Nutrients</a>
         <div class="icons3" style="--i:2">
-            <a class="bx bxs-user-circle" style="--i:2"></a>
+            <a href="Profile.html"class="bx bxs-user-circle" style="--i:2"></a>
         </div>
     </nav>
 
-    <div class="icons2">
-        <i class="bx bxs-user-circle"></i>
+    <div class="icons2" id="profileDropdown">
+        <i class="bx bxs-user-circle" id="profileIcon"></i>
+        <div class="dropdown-content" id="dropdownContent">
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
     </div>
 </header>
 <!-- End Navbar -->

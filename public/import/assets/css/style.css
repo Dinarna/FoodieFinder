@@ -73,7 +73,7 @@ section {
   padding: 10px 15px;
   font-size: 18px;
   font-weight: bold;
-  border: none; /* Ensure no border */
+  border: none;
   background: none;
   color: #6caf87;
   cursor: pointer;
@@ -82,7 +82,7 @@ section {
 }
 
 #back-btn:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
   color: #4a7b5c;
 }
 
@@ -140,12 +140,12 @@ section {
   font-size: 2.8rem;
   color: #fff;
   cursor: pointer;
-  margin-left: auto; /* Pushes the icons to the right */
+  margin-left: auto;
 }
 
 .icons3 {
   display: none;
-  font-size: 2.8rem; /* Adjust the size as needed */
+  font-size: 2.8rem;
 }
 
 #check:checked~.navbar a.bxs-user-circle {
@@ -189,7 +189,6 @@ display: none;
   display: none;
 }
 
-/*BREAKPOINT*/
 @media (max-width: 992px) {
   .header {
     padding: 1.3rem;
@@ -259,6 +258,33 @@ display: none;
   }
 
 }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #4a7b5c;
+  border-radius: 10px;
+  color: white;
+}
+
+#profileDropdown:hover #dropdownContent {
+  display: block;
+}
 /*--------------------------------------------------------------
 # End Navbar Section
 --------------------------------------------------------------*/
@@ -274,7 +300,7 @@ display: none;
 #hero {
   width: 100%;
   height: 100vh;
-  background: url('/Impact/assets/img/bg12.jpg') center/cover no-repeat;
+  background: url('/import/assets/img/bg12.jpg') center/cover no-repeat;
   display: flex;
   position: relative;
 }
@@ -376,6 +402,193 @@ display: none;
     transform: translateY(-10px);
   }
 }
+/*--------------------------------------------------------------
+# Ingridient Section
+--------------------------------------------------------------*/
+.ingredient-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ingredient-container .input-box {
+  position: relative;
+  height: 76px;
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  margin: 0 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ingredient-container .input-box i,
+.ingredient-container .input-box .button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ingredient-container .input-box i {
+  left: 20px;
+  font-size: 30px;
+  color: #707070;
+}
+
+.ingredient-container .input-box input {
+  height: 100%;
+  width: calc(100% - 80px);
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  border: none;
+  padding: 0 20px;
+  background-color: transparent;
+}
+
+.ingredient-container .input-box .button {
+  right: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  background-color: #6caf87;
+  cursor: pointer;
+}
+
+.ingredient-container .drag-area {
+  border: 2px dashed #5B9472;
+  height: 500px;
+  width: 700px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.ingredient-container .drag-area.active {
+  border: 2px solid #5B9472;
+}
+
+.ingredient-container .drag-area .icon {
+  font-size: 100px;
+  color: #5B9472;
+}
+
+.ingredient-container .drag-area header {
+  font-size: 30px;
+  font-weight: 500;
+  color: #5B9472;
+}
+
+.ingredient-container .drag-area span {
+  font-size: 25px;
+  font-weight: 500;
+  color: #5B9472;
+  margin: 10px 0 15px 0;
+}
+
+.ingredient-container .drag-area button {
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  background: #5B9472;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ingredient-container .drag-area img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.ingredient-container .input-box .button:hover,
+.ingredient-container .drag-area button:hover {
+  background-color: #4a7b5c;
+  color: #fff;
+  border-color: #4a7b5c;
+}
+
+.ingredient-container .input-box .button,
+.ingredient-container .drag-area button {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.ingredient-list-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+
+
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.ingredient-list {
+  margin-top: 10px;
+}
+
+.ingredient-list span {
+  font-size: 18px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+}
+
+.ingredient-container .ingredient-list-container {
+  margin-top: 20px;
+}
+
+
+@media screen and (max-width: 500px) {
+  .ingredient-list-container {
+    margin: 20px 8px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ingredient-container .input-box {
+    height: 66px;
+    margin: 0 8px;
+  }
+  .ingredient-container .input-box i {
+    left: 12px;
+    font-size: 25px;
+  }
+  .ingredient-container .input-box input {
+    padding: 0 112px 0 50px;
+  }
+  .ingredient-container .input-box .button {
+    right: 12px;
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+  .ingredient-list-container {
+    margin: 20px 8px;
+  }
+}
+
+
 
 /*--------------------------------------------------------------
 # Nutriens Section
@@ -527,7 +740,7 @@ display: none;
 .recipe-item div {
   flex-grow: 1;
   padding: 10px;
-  text-align: left; /* Adjust text alignment as needed */
+  text-align: left;
 }
 
 .recipe-item h2 {
@@ -540,7 +753,7 @@ display: none;
 .recipe-item p {
   margin: 0;
   padding: 10px;
-  color: #fff; /* Text color */
+  color: #fff;
 }
 
 .recipe-item .custom-btn {
@@ -599,8 +812,8 @@ display: none;
 # detail recipe
 --------------------------------------------------------------*/
 .detailrecipe {
-  background-color: #5B9472; /* Same background color as the recipe page */
-  color: white; /* Text color */
+  background-color: #5B9472;
+  color: white;
   border-radius: 20px;
 }
 
@@ -1078,4 +1291,3 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     padding     : 0.85rem 1.5rem;
     border-color: rgba(24, 28, 33, 0.03) !important;
 }
-
