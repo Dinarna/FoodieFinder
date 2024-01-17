@@ -45,7 +45,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #0A6835;
+  color: #333;
 }
 
 .section-header h2:after {
@@ -63,8 +63,29 @@ section {
 
 .section-header p {
   margin-bottom: 0;
-  color: black;
+  color: #0A6835;
 }
+
+#back-btn {
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none; /* Ensure no border */
+  background: none;
+  color: #6caf87;
+  cursor: pointer;
+  text-decoration: none;
+  padding-bottom: 20px;
+}
+
+#back-btn:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: #4a7b5c;
+}
+
 /*--------------------------------------------------------------
 # Navbar Section
 --------------------------------------------------------------*/
@@ -241,6 +262,120 @@ display: none;
 /*--------------------------------------------------------------
 # End Navbar Section
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.title2 {
+  max-width: 450px;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url('/Impact/assets/img/bg12.jpg') center/cover no-repeat;
+  display: flex;
+  position: relative;
+}
+
+#hero .container {
+  padding-top: 72px;
+}
+
+#hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #0A6835;
+}
+
+#hero h2 {
+  color: #333;
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+
+#hero .btn-get-started {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px 11px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px 0 0 0;
+  color: #fff;
+  text-transform: uppercase;
+  background: #6caf87;
+}
+
+#hero .btn-get-started:hover {
+  background: #4a7b5c;
+}
+
+
+#hero .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@media (max-width: 991px) {
+  #hero {
+    height: 100vh;
+    text-align: center;
+  }
+
+  #hero .animated {
+    animation: none;
+  }
+
+  #hero .hero-img {
+    text-align: center;
+  }
+
+  #hero .hero-img img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  #hero .hero-img img {
+    width: 70%;
+  }
+}
+
+@media (max-width: 575px) {
+  #hero .hero-img img {
+    width: 80%;
+  }
+
+  #hero .btn-get-started {
+    font-size: 16px;
+    padding: 10px 24px 11px 24px;
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
 
 /*--------------------------------------------------------------
 # Nutriens Section
@@ -248,11 +383,11 @@ display: none;
 .Nutriens-container .container {
   width: 100%;
   max-width: 1000px;
-  opacity: 0.8;
   background: #5B9472;
   padding: 80px;
   margin: 0 auto;
   border-radius: 10px;
+  margin-top: 20px;
 }
 
 .Nutriens-container .form-title {
@@ -346,62 +481,201 @@ display: none;
 /*--------------------------------------------------------------
 # recipe
 --------------------------------------------------------------*/
-
-.recipe-info {
-  display: flex;
-  justify-content: space-between;
-  color: white; /* Set text color to white */
+.recipe-container{
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+.recipe-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.left-column {
+.recipe-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #5B9472;
+  color: #fff;
+  text-align: center;
+}
+
+.recipe-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.recipe-item .recipe-info {
+  flex-grow: 1;
+  padding: 10px;
+  text-align: left;
+}
+
+.recipe-item .recipe-actions {
+  padding: 10px;
+}
+
+.recipe-item div {
+  flex-grow: 1;
+  padding: 10px;
+  text-align: left; /* Adjust text alignment as needed */
+}
+
+.recipe-item h2 {
+  margin: 0;
+  font-size: 20px;
+  padding: 10px;
+  min-width: 200px;
+}
+
+.recipe-item p {
+  margin: 0;
+  padding: 10px;
+  color: #fff; /* Text color */
+}
+
+.recipe-item .custom-btn {
+  display: inline-block;
+  width: 80%;
+  max-width: 200px;
+  margin: 10px auto;
+  font-size: 14px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 50px;
+  background: #fff;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+}
+
+.recipe-item .custom-btn:hover {
+  background: #4a7b5c;
+  color: #fff;
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+  .recipe-item {
+    flex-direction: column;
+  }
+
+  .recipe-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .recipe-item h2 {
+    font-size: 20px;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .recipe-item p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .recipe-item a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/*--------------------------------------------------------------
+# detail recipe
+--------------------------------------------------------------*/
+.detailrecipe {
+  background-color: #5B9472; /* Same background color as the recipe page */
+  color: white; /* Text color */
+  border-radius: 20px;
+}
+
+.detailrecipe .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.detailrecipe .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.detailrecipe .recipe-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detailrecipe .left-column {
   flex: 1;
 }
 
-.recipe-img {
+.detailrecipe .recipe-img {
   width: 100%;
-  max-width: 300px; /* Adjust the max-width as needed */
   height: auto;
-  border-radius: 10px; /* Optional: Add border-radius for a rounded look */
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  border: 2px solid #fff;
+  border-radius: 5px;
 }
 
-.nutrition-info {
+.detailrecipe .nutrition-info {
   list-style: none;
   padding: 0;
 }
 
-.right-column {
+.detailrecipe .right-column {
   flex: 2;
-  padding-left: 20px; /* Adjust the spacing between columns as needed */
+  margin-left: 20px;
 }
 
-.recipe-title {
-  font-size: 24px;
+.detailrecipe .recipe-title {
+  font-size: 36px;
   margin-bottom: 10px;
 }
 
-.ingredients-list,
-.instructions {
+.detailrecipe .recipe-description {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.detailrecipe .cooking-time,
+.detailrecipe .origin {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.detailrecipe .ingredients-list,
+.detailrecipe .instructions {
   margin-top: 20px;
 }
 
-.ingredients-list h3,
-.instructions h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.ingredients-list ul,
-.instructions ol {
+.detailrecipe .ingredients-list ul,
+.detailrecipe .instructions ol {
   list-style: none;
   padding: 0;
 }
 
-.ingredients-list li,
-.instructions li {
+.detailrecipe .ingredients-list li,
+.detailrecipe .instructions li {
+  font-size: 14px;
   margin-bottom: 5px;
-  color: white; /* Set text color to white */
 }
-
 
 
 /*--------------------------------------------------------------
@@ -502,8 +776,6 @@ display: none;
   /*--------------------------------------------------------------
   # Portfolio Details Section
   --------------------------------------------------------------*/
-
-
 
   .portfolio-details .portfolio-details-slider img {
     width: 100%;
@@ -670,9 +942,6 @@ display: none;
     padding: 0;
   }
 
-
-
-
 /*--------------------------------------------------------------
   # Profile Section
   --------------------------------------------------------------*/
@@ -809,3 +1078,4 @@ html:not(.dark-style) .account-settings-links .list-group-item.active {
     padding     : 0.85rem 1.5rem;
     border-color: rgba(24, 28, 33, 0.03) !important;
 }
+

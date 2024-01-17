@@ -31,9 +31,24 @@ Route::get('/Profile', function () {
     return view('Profile');
 });
 
-// Profile Page
+// Template Login Page
 Route::get('/Register', function () {
     return view('Register');
+});
+
+// Template DetailRecipe Page
+Route::get('/DetailRecipe', function () {
+    return view('DetailRecipe');
+});
+
+// Template Recipe Page
+Route::get('/Recipe', function () {
+    return view('Recipe');
+});
+
+// Template WelcomePage Page
+Route::get('/WelcomePage', function () {
+    return view('WelcomePage');
 });
 
 Route::get('/dashboard', function () {
