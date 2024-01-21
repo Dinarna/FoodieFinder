@@ -3,6 +3,7 @@
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\APIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +60,8 @@ Route::get('/Ingredient', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/LandingPage', [APIController::class, 'index']);
 
 Route::get('auth/google', [GoogleAuthController::class,'redirect'])->name('google-auth');
 Route::get('auth/google/callback', [GoogleAuthController::class,'callbackGoogle']);

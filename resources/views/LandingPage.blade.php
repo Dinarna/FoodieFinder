@@ -4,7 +4,6 @@
     <!-- ======= Page Section ======= -->
     <section id="portfolio" class="portfolio sections-bg">
         <div class="container" data-aos="fade-up">
-
             <div class="section-header">
                 <h2>Recommendation Recipe</h2>
                 <p>Discover a world of culinary delights tailored to your dietary preferences. From vibrant vegetarian
@@ -28,66 +27,23 @@
                 </div>
 
                 <div class="row gy-4 portfolio-container">
-
-                    <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap" href="">
-                            <img src="import/assets/img/portfolio/app-1.jpg" class="img-fluid" alt=""></a>
-                            <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">App 1</a></h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
+                    @foreach($recipes as $recipe)
+                        <div class="col-xl-4 col-md-6 portfolio-item filter-app">
+                            <div class="portfolio-wrap">
+                                <img src="{{ $recipe['image'] }}" class="img-fluid" alt="{{ $recipe['title'] }}">
+                                <div class="portfolio-info">
+                                    <h4>
+                                        <a href="#" title="{{ $recipe['title'] }}">
+                                            {{ $recipe['title'] }}
+                                        </a>
+                                    </h4>
+                                </div>
                             </div>
-                        </div>
-                    </div><!-- End Item -->
-
-                    <div class="col-xl-4 col-md-6 portfolio-item filter-product">
-                        <div class="portfolio-wrap" href="">
-                            <img src="import/assets/img/portfolio/product-1.jpg" class="img-fluid" alt=""></a>
-                            <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Product 1</a></h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                            </div>
-                        </div>
-                    </div><!-- End Item -->
-
-                    <div class="col-xl-4 col-md-6 portfolio-item filter-branding">
-                        <div class="portfolio-wrap" href="">
-                            <img src="import/assets/img/portfolio/branding-1.jpg" class="img-fluid" alt=""></a>
-                            <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Branding 1</a></h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                            </div>
-                        </div>
-                    </div><!-- End Item -->
-
-                    <div class="col-xl-4 col-md-6 portfolio-item filter-books">
-                        <div class="portfolio-wrap" href="">
-                            <img src="import/assets/img/portfolio/books-1.jpg" class="img-fluid" alt=""></a>
-                            <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Books 1</a></h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                            </div>
-                        </div>
-                    </div><!-- End Item -->
-
-                    <div class="col-xl-4 col-md-6 portfolio-item filter-app">
-                        <div class="portfolio-wrap" href="">
-                            <img src="import/assets/img/portfolio/app-2.jpg" class="img-fluid" alt=""></a>
-                            <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">App 2</a></h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                            </div>
-                        </div>
-                    </div><!-- End Item -->
-
-                    <div class="col-xl-4 col-md-6 portfolio-item filter-product">
-                        <div class="portfolio-wrap" href="">
-                            <img src="import/assets/img/portfolio/product-2.jpg" class="img-fluid" alt=""></a>
-                            <div class="portfolio-info">
-                                <h4><a href="portfolio-details.html" title="More Details">Product 2</a></h4>
-                                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                            </div>
-                        </div>
-                    </div><!-- End Item -->
+                        </div><!-- End Item -->
+                    @endforeach
+                </div>
+            </div>
+        </div>
     </section>
     <!-- ======= End Page ======= -->
 @endsection
