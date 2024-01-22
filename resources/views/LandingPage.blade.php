@@ -27,6 +27,7 @@
                 </div>
 
                 <div class="row gy-4 portfolio-container">
+                @if(count($recipes) > 0)
                     @foreach($recipes as $recipe)
                         <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                             <div class="portfolio-wrap">
@@ -41,6 +42,9 @@
                             </div>
                         </div><!-- End Item -->
                     @endforeach
+                @else
+                    <p>No recipes found.</p>
+                @endif
                 </div>
             </div>
         </div>

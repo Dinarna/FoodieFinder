@@ -17,8 +17,11 @@
 
                 <!-- Input Box (formerly Search Bar) -->
                 <div class="input-box">
-                    <input type="text" placeholder="Input here using English" />
-                    <button class="button">Search</button>
+                    <form action="{{ route('LandingPage') }}" method="POST">
+                        @csrf
+                        <input type="text" name="query" placeholder="Input here using English" />
+                        <button class="button" type="submit" >Search</button>
+                    </form>
                 </div>
 
                 <!-- Ingredient List Card -->
