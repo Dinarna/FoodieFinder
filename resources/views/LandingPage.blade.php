@@ -15,23 +15,12 @@
             <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry"
                 data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
 
-                <div>
-                    <ul class="portfolio-flters">
-                        <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-app">Vegetarian</li>
-                        <li data-filter=".filter-product">Vegan</li>
-                        <li data-filter=".filter-branding">Pescatarian</li>
-                        <li data-filter=".filter-books">Gluten-Free</li>
-                        <li data-filter=".filter-books">Low Carb</li>
-                    </ul><!-- End Filters -->
-                </div>
-
                 <div class="row gy-4 portfolio-container">
                 @if(count($recipes) > 0)
                     @foreach($recipes as $recipe)
                         <div class="col-xl-4 col-md-6 portfolio-item filter-app">
                             <div class="portfolio-wrap">
-                                <img src="{{ $recipe['image'] }}" class="img-fluid" alt="{{ $recipe['title'] }}">
+                                <img src="{{ $recipe['image'] }}" class="img-fluid" alt="{{ $recipe['title'] }}" style="width: 100%; height: 100%;">
                                 <div class="portfolio-info">
                                     <h4>
                                         <a href="#" title="{{ $recipe['title'] }}">

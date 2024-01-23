@@ -23,6 +23,33 @@ a{
   color: #fff;
   font-size: 1rem;
 }
+/*--------------------------------------------------------------
+# button
+--------------------------------------------------------------*/
+/* Tambahkan CSS untuk Tombol Search */
+.search-button-container {
+    text-align: center;
+    margin-top: 20px; /* Sesuaikan margin sesuai kebutuhan */
+}
+
+.search-button {
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #5B9472;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.search-button:hover {
+    background-color: #4a7b5c;
+}
+
 
 /*--------------------------------------------------------------
 # Sections & Section Header

@@ -34,7 +34,7 @@ Route::get('/Profile', function () {
 });
 
 // Template Login Page
-Route::get('/Register', function () {
+Route::get('/Login', function () {
     return view('Register');
 });
 
@@ -49,7 +49,7 @@ Route::get('/Recipe', function () {
 });
 
 // Template WelcomePage Page
-Route::get('/helo', function () {
+Route::get('/', function () {
     return view('WelcomePage');
 });
 

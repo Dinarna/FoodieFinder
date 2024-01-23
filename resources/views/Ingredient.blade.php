@@ -9,9 +9,7 @@
                 <!-- Drag Area -->
                 <div class="drag-area">
                     <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                    <header>Drag & Drop to Upload File</header>
-                    <span>OR</span>
-                    <button>Browse File</button>
+                    <button>Open Camera</button>
                     <input type="file" hidden>
                 </div>
 
@@ -20,7 +18,7 @@
                     <form action="{{ route('LandingPage') }}" method="POST">
                         @csrf
                         <input type="text" name="query" placeholder="Input here using English" />
-                        <button class="button" type="submit" >Search</button>
+                        <button class="button" type="submit" >Add</button>
                     </form>
                 </div>
 
@@ -35,7 +33,11 @@
                             <!-- Add more dummy data as needed -->
                         </ul>
                     </div>
+                    <div class="search-button-container">
+                        <button class="search-button">Search</button>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
