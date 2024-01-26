@@ -47,7 +47,7 @@
                             </div>
 
                             <!-- Instructions -->
-                            <div class="instructions detailrecipe">
+                        <div class="instructions detailrecipe">
                                 <h3 class="section-title">Instructions:</h3>
                                 <ol>
                                     <li>Step 1: Lorem ipsum dolor sit amet.</li>

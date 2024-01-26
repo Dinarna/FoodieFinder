@@ -60,6 +60,9 @@ Route::get('/dashboard', function () {
 
 Route::get('/Home', [APIController::class, 'index']);
 Route::post('/LandingPahge', [RecipeController::class, 'handleSearch'])->name('LandingPage');
+Route::post('/getbynutrients', [RecipeController::class, 'recipeByNutrients'])->name('nutrients');
+Route::get('recipe/{id}', [RecipeController::class, 'show'])->name('recipe.show');
+
 
 Route::get('auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
 Route::get('auth/google/callback', [GoogleAuthController::class, 'callbackGoogle']);
