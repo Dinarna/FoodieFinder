@@ -9,12 +9,12 @@ class APIController extends Controller
 {
     public function index()
     {
-        $apiKey = '6210af4414e74fd997a6423f66330df4'; // Ganti dengan kunci API Spoonacular Anda
+        $apiKey = env("SPOONACULAR_KEY"); // Ganti dengan kunci API Spoonacular Anda
 
         $response = Http::get('https://api.spoonacular.com/recipes/random', [
             'apiKey' => $apiKey,
             'number' => 9
-            
+
         ]);
 
         $recipes = $response->json()['recipes'];
