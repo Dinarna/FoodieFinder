@@ -46,7 +46,7 @@
                     gastronomic delights! Are you tired of the same old menu options and craving something new and
                     exciting? Look no further – FoodieFinder is here to revolutionize your dining experience.</h5>
                 <div class="d-flex justify-content-center justify-content-lg-start">
-                    <a href="/register" class="btn-get-started scrollto">Get Started</a>
+                    <a href="/Login" class="btn-get-started scrollto">Get Started</a>
                 </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">

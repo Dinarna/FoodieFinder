@@ -18,10 +18,6 @@ use App\Http\Controllers\RecipeController;
 */
 
 
-// Landing Page
-Route::get('/LandingPage', function () {
-    return view('LandingPage');
-});
 
 // Nutrients Page
 Route::get('/Nutrients', function () {
@@ -62,11 +58,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/LandingPage', [APIController::class, 'index']);
+Route::get('/Home', [APIController::class, 'index']);
 Route::post('/LandingPahge', [RecipeController::class, 'handleSearch'])->name('LandingPage');
 
-Route::get('auth/google', [GoogleAuthController::class,'redirect'])->name('google-auth');
-Route::get('auth/google/callback', [GoogleAuthController::class,'callbackGoogle']);
+Route::get('auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
+Route::get('auth/google/callback', [GoogleAuthController::class, 'callbackGoogle']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -74,4 +70,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

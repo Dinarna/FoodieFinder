@@ -21,6 +21,6 @@ class APIController extends Controller
 
 
         return view('LandingPage', compact('recipes'));
-        
+
     }
 }

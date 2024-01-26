@@ -27,10 +27,10 @@ class GoogleAuthController extends Controller
                     'google_id' => $google_id
                 ]);
                 Auth::login($new_user);
-                return redirect()->intended('dashboard');
+                return redirect()->intended('Home');
             } else {
                 Auth::login($user);
-                return redirect()->intended('dashboard');
+                return redirect()->intended('Home');
             }
         } catch (\Throwable $th) {
             dd('Something went wrong!' . $th->getMessage());

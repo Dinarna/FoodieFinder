@@ -13,46 +13,56 @@
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup">
-                <form action="#" class="sign-in-form">
+                <form method="POST" action="{{route('login')}}" class="sign-in-form">
+                    @csrf
                     <h2 class="title">Sign in</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" />
+                        <input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="Email" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" />
+                        <input id="password"
+                        type="password"
+                        name="password"
+                        required autocomplete="current-password" placeholder="Password"/>
                     </div>
-                    <input type="submit" value="Login" class="btn solid" href="landing.html" />
+                    <input type="submit" value="Login" class="btn solid"  />
                     <p class="social-text">Or Sign in with google</p>
                     <div class="social-media">
-                        <a href="#" class="social-icon">
+                        <a href="{{ route('google-auth') }}" class="social-icon">
                             <i class="fab fa-google"></i>
                         </a>
                     </div>
                 </form>
-                <form action="#" class="sign-up-form">
+                <form method="POST" action="{{ route('register') }}"class="sign-up-form">
+                    @csrf
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username" />
+                        <input id="name"  type="text" name="name" :value="old('name')" required autofocus autocomplete="name" placeholder="Name" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email" />
+                        <input id="email"  type="email" name="email" :value="old('email')" required autocomplete="username" placeholder="Email" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Password" />
+                        <input id="password" class="block mt-1 w-full"
+                        type="password"
+                        name="password"
+                        required autocomplete="new-password" placeholder="Password" />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Current Password" />
+                        <input id="password_confirmation"
+                        type="password"
+                        name="password_confirmation" required autocomplete="new-password" placeholder="Current Password" />
                     </div>
-                    <input type="submit" class="btn" value="Sign up" href="landing.html" />
+                    <input type="submit" class="btn" value="Sign up"/>
                     <p class="social-text">Or Sign up with google</p>
                     <div class="social-media">
-                        <a href="#" class="social-icon">
+                        <a href="{{ route('google-auth') }}" class="social-icon">
                             <i class="fab fa-google"></i>
                         </a>
                     </div>
