@@ -59,7 +59,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/Home', [APIController::class, 'index']);
-Route::post('/LandingPahge', [RecipeController::class, 'handleSearch'])->name('LandingPage');
+Route::post('/Home', [RecipeController::class, 'handleSearch'])->name('LandingPage');
 Route::post('/getbynutrients', [RecipeController::class, 'recipeByNutrients'])->name('nutrients');
 Route::get('recipe/{id}', [RecipeController::class, 'show'])->name('recipe.show');
 

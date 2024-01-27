@@ -23,7 +23,7 @@
                                 <img src="{{ $recipe['image'] }}" class="img-fluid" alt="{{ $recipe['title'] }}" style="width: 100%; height: 100%;">
                                 <div class="portfolio-info">
                                     <h4>
-                                        <a href="#" title="{{ $recipe['title'] }}">
+                                        <a href="{{ route('recipe.show', ['id' => $recipe['id']]) }}" title="{{ $recipe['title'] }}">
                                             {{ $recipe['title'] }}
                                         </a>
                                     </h4>

@@ -8,18 +8,25 @@ use Illuminate\Support\Facades\Http;
 class RecipeController extends Controller
 {
     public function handleSearch(Request $request)
-    {
-        $apiKey = env('SPOONACULAR_KEY'); // Replace with your Spoonacular API key
-        $apiUrl = "https://api.spoonacular.com/recipes/complexSearch";
+        {
+        // Ambil nilai dari formulir (dalam hal ini, nilai array bahan)
+        $ingredientArray = json_decode($request->input('ingredient_array'), true);
+
+        // Lakukan logika pencarian sesuai kebutuhan
+
+        // Panggil API untuk melakukan pencarian berdasarkan bahan
+        $apiKey = env('SPOONACULAR_KEY');  // Gantilah dengan kunci API Spoonacular Anda
+        $apiUrl = "https://api.spoonacular.com/recipes/findByIngredients";
 
         $response = Http::get($apiUrl, [
             'apiKey' => $apiKey,
-            'query' => $request->input('query'),
-            // Add other parameters as needed for the Spoonacular API
+            'ingredients' => $ingredientArray ? implode(',', array_column($ingredientArray, 'value')) : '',
+            // Tambahkan parameter lain sesuai kebutuhan API Spoonacular
         ]);
 
-        $recipes = $response->json()['results'];
-
+        $recipes = $response->json();
+        // dd($response);
+        // Redirect atau tampilkan hasil pencarian
         return view('LandingPage', compact('recipes'));
     }
 
