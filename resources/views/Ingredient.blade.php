@@ -126,7 +126,7 @@
         if (webcam) {
             webcam.stop(); // Memberhentikan kamera
             webcam = null; // Mengosongkan webcam
-            document.getElementById("webcam-container").innerHTML = ""; 
+            document.getElementById("webcam-container").innerHTML = "";
         }
         }
 
@@ -160,7 +160,7 @@
             // Add the predicted label to the ingredient list
             const predictedIngredient = highestPrediction.className;
             // Append the predicted ingredient to the ingredient list with a delete button
-            $('#ingredient-list').append('<li><span>' + predictedIngredient + '</span><button class="delete-button">Delete</button></li>');
+            $('#ingredient-list').append('<li><span>' + predictedIngredient + '</span><button class="delete-button btn btn-danger float-right">Delete</button></li>');
         }
     </script>
 @endsection
