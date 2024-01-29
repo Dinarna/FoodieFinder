@@ -8,11 +8,10 @@ use Illuminate\Support\Facades\Http;
 class RecipeController extends Controller
 {
     public function handleSearch(Request $request)
-        {
+    {
         // Ambil nilai dari formulir (dalam hal ini, nilai array bahan)
         $ingredientArray = json_decode($request->input('ingredient_array'), true);
 
-        // Lakukan logika pencarian sesuai kebutuhan
 
         // Panggil API untuk melakukan pencarian berdasarkan bahan
         $apiKey = env('SPOONACULAR_KEY');  // Gantilah dengan kunci API Spoonacular Anda
@@ -20,7 +19,7 @@ class RecipeController extends Controller
 
         $response = Http::get($apiUrl, [
             'apiKey' => $apiKey,
-            'ingredients' => $ingredientArray ? implode(',', array_column($ingredientArray, 'value')) : '',
+            'ingredients' => $ingredientArray ? implode(',+', array_column($ingredientArray, 'value')) : '',
             // Tambahkan parameter lain sesuai kebutuhan API Spoonacular
         ]);
 
@@ -60,14 +59,14 @@ class RecipeController extends Controller
         $response = Http::get("https://api.spoonacular.com/recipes/{$id}/analyzedInstructions", [
             'apiKey' => $apiKey
         ]);
-
-        if ($response->successful()) {
-            $instructions = $response->json();
-            // Lakukan apapun yang Anda inginkan dengan data instruksi
-            return view('DetailRecipe', ['instructions' => $instructions]);
-        } else {
-            // Tangani jika terjadi kesalahan saat mengambil data dari API
-            return back()->withError('Failed to fetch recipe instructions.');
-        }
+        dd($response->json());
+        // if ($response->successful()) {
+        //     $instructions = $response->json();
+        //     // Lakukan apapun yang Anda inginkan dengan data instruksi
+        //     return view('DetailRecipe', ['instructions' => $instructions]);
+        // } else {
+        //     // Tangani jika terjadi kesalahan saat mengambil data dari API
+        //     return back()->withError('Failed to fetch recipe instructions.');
+        // }
     }
 }

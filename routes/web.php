@@ -22,7 +22,7 @@ use App\Http\Controllers\RecipeController;
 // Nutrients Page
 Route::get('/Nutrients', function () {
     return view('Nutrients');
-});
+})->middleware(['auth', 'verified']);
 
 // Profile Page
 Route::get('/Profile', function () {
@@ -37,12 +37,12 @@ Route::get('/Login', function () {
 // Template DetailRecipe Page
 Route::get('/DetailRecipe', function () {
     return view('DetailRecipe');
-});
+})->middleware(['auth', 'verified']);
 
 // Template Recipe Page
 Route::get('/Recipe', function () {
     return view('Recipe');
-});
+})->middleware(['auth', 'verified']);
 
 // Template WelcomePage Page
 Route::get('/', function () {
@@ -52,16 +52,16 @@ Route::get('/', function () {
 // Template Ingredient Page
 Route::get('/Ingredient', function () {
     return view('Ingredient');
-});
+})->middleware(['auth', 'verified']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/Home', [APIController::class, 'index']);
-Route::post('/Home', [RecipeController::class, 'handleSearch'])->name('LandingPage');
-Route::post('/getbynutrients', [RecipeController::class, 'recipeByNutrients'])->name('nutrients');
-Route::get('recipe/{id}', [RecipeController::class, 'show'])->name('recipe.show');
+Route::get('/Home', [APIController::class, 'index'])->middleware(['auth', 'verified']);
+Route::post('/Home', [RecipeController::class, 'handleSearch'])->middleware(['auth', 'verified'])->name('LandingPage');
+Route::post('/getbynutrients', [RecipeController::class, 'recipeByNutrients'])->middleware(['auth', 'verified'])->name('nutrients');
+Route::get('recipe/{id}', [RecipeController::class, 'show'])->middleware(['auth', 'verified'])->name('recipe.show');
 
 
 Route::get('auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
