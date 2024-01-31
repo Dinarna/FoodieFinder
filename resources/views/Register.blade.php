@@ -27,7 +27,18 @@
                         name="password"
                         required autocomplete="current-password" placeholder="Password"/>
                     </div>
-                    <input type="submit" value="Login" class="btn solid"  />
+
+                    @if (Route::has('password.request'))
+                    <a class="forgot-password" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                @endif
+                    <input type="submit" value="Login" class="btn solid"/>
+                    <label for="remember_me" class="inline-flex items-center">
+                        <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
+                        <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
+                    </label>
+                    <br>
                     <p class="social-text">Or Sign in with google</p>
                     <div class="social-media">
                         <a href="{{ route('google-auth') }}" class="social-icon">
