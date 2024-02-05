@@ -7,6 +7,11 @@
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <link href="{{ asset('import/assets/css/login.css') }}" rel="stylesheet">
     <title>Sign in & Sign up Form</title>
+
+    <!-- Favicons -->
+    <link href="{{ asset('import/assets/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('import/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    
 </head>
 
 <body>
