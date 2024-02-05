@@ -59,8 +59,9 @@
                 var inputName = 'ingredient_' + Date.now();
 
                 // Append the input value to the ingredient list with a delete button
-                $('#ingredient-list').append('<li><span name="' + inputName + '">' + inputValue + '</span><button class="delete-button btn btn-danger float-right">Delete</button></li>');
-
+                $('#ingredient-list').append('<li style="position: relative; padding-right: 40px;">' +
+                             '<span name="' + inputName + '">' + inputValue + '</span>' +
+                             '<button class="delete-button btn btn-danger" style="position: absolute; right: 0;">Delete</button></li>');
                 // $('#ingredient-list').append('<li><span name="' + inputName + '">' + inputValue + '</span><button class="delete-button ">Delete</button></li>');
 
                 // Clear the input field
