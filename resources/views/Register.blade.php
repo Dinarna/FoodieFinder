@@ -11,7 +11,7 @@
     <!-- Favicons -->
     <link href="{{ asset('import/assets/img/favicon.png') }}" rel="icon">
     <link href="{{ asset('import/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
-    
+
 </head>
 
 <body>
@@ -37,10 +37,10 @@
                     <x-input-error :messages="$errors->get('password')" class="mt-2" style="background-color: #ffe6e6; color: #dc3545; padding: 10px; border-radius: 5px;"/>
 
                     <input type="submit" value="Login" class="btn solid"/>
-                    <label for="remember_me" class="inline-flex items-center">
+                    {{-- <label for="remember_me" class="inline-flex items-center">
                         <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
                         <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-                    </label>
+                    </label> --}}
                     <br>
                     <p class="social-text">Or Sign in with google</p>
                     <div class="social-media">
