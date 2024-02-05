@@ -20,6 +20,8 @@
                         <i class="fas fa-user"></i>
                         <input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="Email" />
                     </div>
+                    <x-input-error :messages="$errors->get('email')" class="mt-2" style="background-color: #ffe6e6; color: #dc3545; padding: 10px; border-radius: 5px;"/>
+
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <input id="password"
@@ -27,6 +29,7 @@
                         name="password"
                         required autocomplete="current-password" placeholder="Password"/>
                     </div>
+                    <x-input-error :messages="$errors->get('password')" class="mt-2" style="background-color: #ffe6e6; color: #dc3545; padding: 10px; border-radius: 5px;"/>
 
                     <input type="submit" value="Login" class="btn solid"/>
                     <label for="remember_me" class="inline-flex items-center">

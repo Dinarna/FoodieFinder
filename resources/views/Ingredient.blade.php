@@ -109,7 +109,7 @@
 
             // Convenience function to setup a webcam
             const flip = true; // whether to flip the webcam
-            webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+            webcam = new tmImage.Webcam(695, 490, flip); // width, height, flip
             await webcam.setup(); // request access to the webcam
             await webcam.play();
             window.requestAnimationFrame(loop);
@@ -160,7 +160,8 @@
             // Add the predicted label to the ingredient list
             const predictedIngredient = highestPrediction.className;
             // Append the predicted ingredient to the ingredient list with a delete button
-            $('#ingredient-list').append('<li><span>' + predictedIngredient + '</span><button class="delete-button btn btn-danger float-right">Delete</button></li>');
-        }
+            $('#ingredient-list').append('<li style="position: relative; padding-right: 40px;">' +
+                                     '<span>' + predictedIngredient + '</span>' +
+                                     '<button class="delete-button btn btn-danger" style="position: absolute; right: 0;">Delete</button></li>');        }
     </script>
 @endsection
