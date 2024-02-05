@@ -13,9 +13,15 @@
         <a href="/Ingredient" style="--i:0">Search By Ingredients</a>
         <a href="/Nutrients" style="--i:1">Search By Nutrients</a>
         <div class="icons3" style="--i:2">
-            <a href="Profile.html"class="bx bxs-user-circle" style="--i:2"></a>
+            <a href="{{ route('logout') }}" class="bi bi-box-arrow-right" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Log out
+            </a>
         </div>
     </nav>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
 
     <form action="{{ route('logout') }}" method="POST">
     <div class="icons2" id="profileDropdown">
