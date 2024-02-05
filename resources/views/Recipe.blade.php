@@ -17,7 +17,9 @@
                                     <div>
                                         <h2>{{ $recipe['title'] }}</h2>
                                         <p class="nutrition-info">Nutrition: Calories: {{ $recipe['calories'] }}, Protein: {{ $recipe['protein'] }}, Fat: {{ $recipe['fat'] }}, Carbs: {{ $recipe['carbs'] }}</p>
-                                        <a href="{{ route('recipe.show', ['id' => $recipe['id']]) }}" class="custom-btn">VIEW RECIPE</a>
+                                        {{-- <a href="{{ route('recipe.show', ['id' => $recipe['id']]) }}" class="custom-btn">VIEW RECIPE</a> --}}
+                                        <a href="https://spoonacular.com/{{$recipe['title']}}-{{$recipe['id']}}" target="_blank" class="custom-btn">VIEW RECIPE</a>
+
                                     </div>
                                 </li>
                             @endforeach
