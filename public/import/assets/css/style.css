@@ -615,6 +615,50 @@ display: none;
   }
 }
 
+/* ... (CSS yang lain tetap sama) ... */
+
+/* Stil untuk tampilan desktop */
+.flex {
+    display: flex;
+}
+
+/* Stil untuk tampilan mobile */
+@media screen and (max-width: 500px) {
+    .flex {
+        flex-direction: column; /* Mengubah tata letak menjadi vertikal */
+        align-items: center; /* Pusatkan elemen secara horizontal */
+    }
+
+    .drag-area .flex button {
+        margin-top: 10px; /* Jarak antara tombol di tampilan mobile */
+    }
+}
+
+.webcam-container {
+    max-width: 100%;
+    width: 100%;
+    height: auto; /* Menyesuaikan tinggi secara otomatis sesuai lebar */
+    border: 2px dashed #5B9472;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+
+@media screen and (max-width: 768px) {
+    .webcam-container {
+        height: auto; /* Sesuaikan dengan kebutuhan responsif Anda */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .webcam-container {
+        height: auto; /* Sesuaikan dengan kebutuhan responsif Anda */
+    }
+}
+
 
 
 /*--------------------------------------------------------------
@@ -806,7 +850,7 @@ display: none;
 
 @media screen and (max-width: 768px) {
   .container {
-    max-width: 90%;
+    max-width: 100%;
   }
   .recipe-item {
     flex-direction: column;
@@ -834,6 +878,34 @@ display: none;
     text-align: center;
   }
 }
+
+@media screen and (max-width: 500px) {
+    .recipe-container {
+        max-width: 100%;
+      }
+
+    .recipe-item img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .recipe-item h2 {
+      font-size: 18px;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+
+    .recipe-item p {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .recipe-item .custom-btn {
+      width: 100%;
+      max-width: none;
+    }
+  }
 
 /*--------------------------------------------------------------
 # detail recipe
